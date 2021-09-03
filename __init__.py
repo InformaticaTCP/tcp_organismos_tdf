@@ -1,1 +1,3 @@
-form . import models
+# -*- coding: UTF-8  -*-
+
+from . import models
