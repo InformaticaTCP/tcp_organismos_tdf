@@ -18,6 +18,9 @@
         'base'
         ],
     'data': [
+        'views/menu.xml',
+        'views/tcp_organismo_view.xml'
+       
     ],
     'application': True,
     'installable': True,

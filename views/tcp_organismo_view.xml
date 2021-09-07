@@ -1,0 +1,107 @@
+<odoo>
+
+    <!-- Start: Vista Form -->
+    <record id="view_tcp_organismo_form" model="ir.ui.view">
+        <field name="name">Vista de Organismos</field>
+        <field name="model">tcp.organismo</field>
+        <field name="arch" type="xml">
+           <form string="Organismo" modifiers="{}">
+                <sheet modifiers="{}">
+                   
+                    <group name="organismo_details" col="4" modifiers="{}">
+                        <field name="name" modifiers="{'required':true}" id="name"/>
+                        <field name="letras" modifiers="{}" id="letras"/>
+                        <field name="codigo" modifiers="{}" id="codigo"/>
+                    </group>
+                    <group modifiers="{}">
+                        <group name="address_details" modifiers="{}">
+                           
+                            <div class="o_address_format" modifiers="{}">
+                                <field name="direccion" placeholder="Direccion" modifiers="{}" id="direccion"/>
+                                <field name="delegacion"/>
+                            </div>
+                        </group>
+                        <group name="communication_details" modifiers="{}">
+                            <field name="telefono" class="o_force_ltr" modifiers="{}" id="telefono"/>
+                            <field name="correo" widget="email" modifiers="{}" id="correo"/>
+                        </group>
+                    </group>
+                    <separator string="Areas"/>
+                     <notebook>
+                        <page string="Areas del organismo">
+                            <field name="area_ids">
+                                <tree editable="bottom">
+                                    <control>
+                                        <create name="add_product_control" string="Agregar Area..."/>
+                                    </control>
+                                    <field name="name"/>
+                                    <field name="letras"/>
+                                    <field name="codigo"/>
+                                    <field name="estado"/>
+                                    <field name="telefono"/>
+                                </tree>
+                            </field>
+                        </page>
+                     </notebook>   
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- End: Vista Form -->                
+
+
+    <!-- Start: Vista Lista -->
+    <record id="view_tcp_organismo_tree" model="ir.ui.view" >
+        <field name="name">Vista Listado de Organismos</field>
+        <field name="model">tcp.organismo</field>
+        <field name="arch" type="xml">
+            <tree >
+                <field name="name"/>
+                <field name="letras"/>
+                <field name="codigo"/>
+                <field name="estado"/>
+                <field name="direccion"/>
+                <field name="telefono"/>
+                <field name="delegacion"/>
+            </tree>
+        </field>
+    </record>
+    <!-- End: Vista Lista -->
+
+    <!-- Start: Vista Kanban -->
+    <record id="view_tcp_organismo_kanban" model="ir.ui.view" >
+    <field name="name">Vista kanban para Organismo</field>
+    <field name="model">tcp.organismo</field>
+    <field name="arch" type="xml">
+        <kanban>
+            <field name="id"/>
+            <templates>
+                <t t-name="kanban-box">
+                    <div class="oe_kanban_global_click">
+                        <div class="oe_kanban_details">
+                            <ul>
+                                <li>
+                                 <strong class="o_kanban_record_subtitle">
+                                    Organismo: <field name="name"/>
+                                 </strong>   
+                                </li>
+                                <li>
+                                    Iniciales y Código : <field name="letras"/>-<field name="codigo"/>
+                                </li>
+                                <li>
+                                    Dirección : <field name="direccion"/>
+                                </li>
+                                <li>
+                                    Teléfono : <field name="telefono"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </t>
+            </templates>
+        </kanban>
+    </field>
+    </record>
+    <!-- End: Vista Kanban -->
+
+</odoo>           

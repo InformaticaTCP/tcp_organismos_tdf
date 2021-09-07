@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<record id="action_open_tcp_organismo" model="ir.actions.act_window">
+    <field name="name">Listado de Organismos</field>
+    <field name="res_model">tcp.organismo</field>
+    <field name="view_mode">kanban,form,tree</field>
+</record>
+
+<record id="action_open_tcp_area" model="ir.actions.act_window">
+    <field name="name">Listado de Areas</field>
+    <field name="res_model">tcp.area</field>
+    <field name="view_mode">kanban,form,tree</field>
+</record>
+
+<record id="action_open_tcp_cargo" model="ir.actions.act_window">
+    <field name="name">Listado de Cargos</field>
+    <field name="res_model">tcp.cargo</field>
+    <field name="view_mode">tree,form,kanban</field>
+</record>
+
+<menuitem id="menu_tcp_organismos" name="TCP Organismos" sequence="1"/>
+<menuitem id="menu_tcp_h_organismo" name="Organismos" parent="menu_tcp_organismos" action="action_open_tcp_organismo" sequence="1"/>
+<menuitem id="menu_tcp_h_area" name="Areas" parent="menu_tcp_organismos" action="action_open_tcp_area" sequence="2"/>
+<menuitem id="menu_tcp_h_cargo" name="Cargos" parent="menu_tcp_organismos" action="action_open_tcp_cargo" sequence="3"/>
+
+</odoo>
+
