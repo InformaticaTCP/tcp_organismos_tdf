@@ -9,7 +9,7 @@ class TcpArea(models.Model):
     _name = "tcp.area"
     _description = "Modelo TCP - Datos de las Areas"
 
-    name = fields.Char(string='Area' , Required=True)
+    name = fields.Char(string='Area', Required=True)
     letras = fields.Char(string='Iniciales', Required=True)
     codigo = fields.Integer(string='Código del Area')
     estado = fields.Selection(string='Activo ?', selection=[('si', 'SI'),('no', 'NO')])
