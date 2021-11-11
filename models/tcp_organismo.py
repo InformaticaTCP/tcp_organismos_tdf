@@ -17,7 +17,7 @@ class TcpOrganismo(models.Model):
     telefono = fields.Char(string='Telefono')
     correo = fields.Char(string='Correo Electrónico')
     delegacion = fields.Selection(string='Delegacion', selection=[('U', 'Ushuaia'), ('R', 'Río Grande'), ('T', 'Tolhuin')], Required=True)
-    fecha_estado = fields.Date(string='Fecha de cambio de estado' ,default=fields.Date.context_today)
-
+    
     #relaciones entre tablas
-    area_ids = fields.One2many(string='Areas',comodel_name='tcp.area',inverse_name='organismo_id' )
+    area_ids = fields.One2many(string='Areas', comodel_name='tcp.area', inverse_name='organismo_id' )
+   

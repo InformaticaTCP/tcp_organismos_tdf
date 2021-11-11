@@ -17,7 +17,6 @@ class TcpArea(models.Model):
     
     # Relaciones de tablas con Organismos
     organismo_id = fields.Many2one(string='Organismo', comodel_name='tcp.organismo', ondelete='restrict')
-    cargo_ids = fields.Many2many(string='Cargos', comodel_name='tcp.cargo')
+    cargo_ids = fields.One2many(string='Cargo', comodel_name='tcp.cargo', inverse_name='area_id', ondelete='restrict')
 
-    # esto es de pruebas para ver si se pueden guardar los datos
-     
+    

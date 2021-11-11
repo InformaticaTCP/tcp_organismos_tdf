@@ -13,5 +13,4 @@ class TcpCargo(models.Model):
     estado = fields.Selection(string='Activo ?', selection=[('si', 'SI'), ('no', 'NO')])
     
     # Relaciones entre Areas y cargos 
-    area_ids = fields.Many2many(string='Areas', comodel_name='tcp.area', ondelete='restrict')
-    
+    area_id= fields.Many2one(string='Area', comodel_name='tcp.area', ondelete='restrict')
