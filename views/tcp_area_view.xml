@@ -20,7 +20,7 @@
                      <notebook>
                         <page string="Cargos del Area">
                             <field name="cargo_ids">
-                                <tree editable="bottom">
+                                <tree editable="bottom" delete="false">
                                     <control>
                                         <create name="add_product_control" string="Agregar cargo..."/>
                                     </control>

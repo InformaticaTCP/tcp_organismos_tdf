@@ -28,7 +28,7 @@
                      <notebook>
                         <page string="Areas del organismo">
                             <field name="area_ids">
-                                <tree editable="bottom">
+                                <tree editable="bottom" delete="false">
                                     <control>
                                         <create name="add_product_control" string="Agregar Area..."/>
                                     </control>
