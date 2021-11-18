@@ -12,8 +12,8 @@ class TcpArea(models.Model):
     name = fields.Char(string='Area', Required=True)
     letras = fields.Char(string='Iniciales', Required=True)
     codigo = fields.Integer(string='Código del Area')
-    estado = fields.Selection(string='Activo ?', selection=[('si', 'SI'),('no', 'NO')])
     telefono = fields.Char(string='Teléfono')
+    active = fields.Boolean(string='Activo ?', default = True )
     
     # Relaciones de tablas con Organismos
     organismo_id = fields.Many2one(string='Organismo', comodel_name='tcp.organismo', ondelete='restrict')

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- Start: Vista Form -->
+    
+    <!-- End: Vista Form -->                
+
+
+    <!-- Start: Vista Lista -->
+    <record id="view_tcp_cargo_tree" model="ir.ui.view" >
+        <field name="name">Vista Listado de Cargos</field>
+        <field name="model">tcp.cargo</field>
+        <field name="arch" type="xml">
+            <tree >
+                <field name="name"/>
+                <field name="area_id"/>
+                <field name="nombre_organismo"/>
+            </tree>
+        </field>
+    </record>
+    <!-- End: Vista Lista -->
+
+    <!-- Start: Vista Kanban -->
+    <record id="view_tcp_cargo_kanban" model="ir.ui.view" >
+    <field name="name">Vista kanban para Cargos</field>
+    <field name="model">tcp.cargo</field>
+    <field name="arch" type="xml">
+        <kanban>
+            <field name="id"/>
+            <templates>
+                <t t-name="kanban-box">
+                    <div class="oe_kanban_global_click">
+                        <div class="oe_kanban_details">
+                            <ul>
+                                <li>
+                                 <strong class="o_kanban_record_subtitle">
+                                    Cargo: <field name="name"/>
+                                 </strong>   
+                                </li>
+                                <li>
+                                 <strong class="o_kanban_record_subtitle">
+                                    Organismo: <field name="area_id"/>
+                                 </strong>   
+                                </li>
+                                <li>
+                                 <strong class="o_kanban_record_subtitle">
+                                    Organismo: <field name="nombre_organismo"/>
+                                 </strong>   
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </t>
+            </templates>
+        </kanban>
+    </field>
+    </record>
+    <!-- End: Vista Kanban -->
+
+</odoo>           

@@ -7,23 +7,21 @@
         <field name="name">Vista de Organismos</field>
         <field name="model">tcp.organismo</field>
         <field name="arch" type="xml">
-           <form string="Organismo" modifiers="{}">
+           <form string="Organismo" modifiers="{}" delete = "false">
                 <sheet modifiers="{}">
-                      <group name="organismo_details" col="4" modifiers="{}">
-                        <field name="name" modifiers="{'required':true}" id="name"/>
-                        <field name="letras" modifiers="{}" id="letras"/>
-                        <field name="codigo" modifiers="{}" id="codigo"/>
-                    </group>
-                    <group modifiers="{}">
-                        <group name="address_details" modifiers="{}">
-                               <div class="o_address_format" modifiers="{}">
-                                <field name="direccion" placeholder="Direccion" modifiers="{}" id="direccion"/>
-                                <field name="delegacion"/>
-                            </div>
+                    <group col="12">
+                        <group colspan="10">
+                            <field name="name" widget="Organismmo" placeholder="Ingrese el nombre del organismo..." required="1"/>
                         </group>
-                        <group name="communication_details" modifiers="{}">
-                            <field name="telefono" class="o_force_ltr" modifiers="{}" id="telefono"/>
-                            <field name="correo" widget="email" modifiers="{}" id="correo"/>
+                        <group colspan="6">
+                            <field name="letras" modifiers="{}" id="letras"/>
+                            <field name="codigo" modifiers="{}" id="codigo"/>
+                            <field name="delegacion" widget="Delegacón" required="1"/>
+                        </group>
+                        <group colspan="6">
+                            <field name="direccion" placeholder="Ingrese la dirección..." modifiers="{}" id="direccion"/>
+                            <field name="telefono" widget="Telefono" class="o_force_ltr" modifiers="{}"/>
+                            <field name="correo" widget="email" modifiers="{}" />
                         </group>
                     </group>
                     <separator string="Areas"/>
@@ -37,7 +35,6 @@
                                     <field name="name"/>
                                     <field name="letras"/>
                                     <field name="codigo"/>
-                                    <field name="estado"/>
                                     <field name="telefono"/>
                                 </tree>
                             </field>
@@ -59,7 +56,6 @@
                 <field name="name"/>
                 <field name="letras"/>
                 <field name="codigo"/>
-                <field name="estado"/>
                 <field name="direccion"/>
                 <field name="telefono"/>
                 <field name="delegacion"/>
@@ -83,6 +79,11 @@
                                 <li>
                                  <strong class="o_kanban_record_subtitle">
                                     Organismo: <field name="name"/>
+                                 </strong>   
+                                </li>
+                                <li>
+                                 <strong >
+                                    Delegación: <field name="delegacion"/>
                                  </strong>   
                                 </li>
                                 <li>

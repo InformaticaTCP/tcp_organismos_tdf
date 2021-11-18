@@ -19,7 +19,9 @@
         ],
     'data': [
         'views/menu.xml',
-        'views/tcp_organismo_view.xml'
+        'views/tcp_organismo_view.xml',
+        'views/tcp_area_view.xml',
+        'views/tcp_cargo_view.xml'
        
     ],
     'application': True,
