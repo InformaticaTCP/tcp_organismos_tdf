@@ -15,7 +15,7 @@ class TcpOrganismo(models.Model):
     direccion = fields.Char(string='Dirección')
     telefono = fields.Char(string='Telefono')
     correo = fields.Char(string='Correo Electrónico')
-    delegacion = fields.Selection(string='Delegacion', selection=[('U', 'Ushuaia'), ('R', 'Río Grande'), ('T', 'Tolhuin')], Required=True)
+    delegacion = fields.Selection(string='Delegacion', selection=[('U', 'Ushuaia'), ('R', 'Río Grande'), ('T', 'Tolhuin'), ('BS', 'Buenos Aires')], Required=True)
     active = fields.Boolean(string='Activo ?', default = True )
     
     #relaciones entre tablas
