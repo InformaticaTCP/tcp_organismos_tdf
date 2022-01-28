@@ -18,6 +18,8 @@
     <field name="view_mode">tree,form,kanban</field>
 </record>
 
+<menuitem id="tcp_organismos_tdf.menu_root" name="TCP Organismos Provinciales" web_icon="tcp_organismo_tdf,static/description/icon.png"/>
+
 <menuitem id="menu_tcp_organismos" name="TCP Organismos" sequence="1"/>
 <menuitem id="menu_tcp_h_organismo" name="Organismos" parent="menu_tcp_organismos" action="action_open_tcp_organismo" sequence="1"/>
 <menuitem id="menu_tcp_h_area" name="Areas" parent="menu_tcp_organismos" action="action_open_tcp_area" sequence="2"/>

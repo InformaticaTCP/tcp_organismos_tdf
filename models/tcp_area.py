@@ -10,6 +10,7 @@ class TcpArea(models.Model):
     _description = "Modelo TCP - Datos de las Areas"
 
     name = fields.Char(string='Area', Required=True)
+    delegacion = fields.Selection(string='Delegacion', selection=[('U', 'Ushuaia'), ('R', 'Río Grande'), ('T', 'Tolhuin'), ('BS', 'Buenos Aires')], Required=True)
     letras = fields.Char(string='Iniciales', Required=True)
     codigo = fields.Integer(string='Código del Area')
     telefono = fields.Char(string='Teléfono')
@@ -18,5 +19,3 @@ class TcpArea(models.Model):
     # Relaciones de tablas con Organismos
     organismo_id = fields.Many2one(string='Organismo', comodel_name='tcp.organismo', ondelete='restrict')
     cargo_ids = fields.One2many(string='Cargo', comodel_name='tcp.cargo', inverse_name='area_id', ondelete='restrict')
-
-    

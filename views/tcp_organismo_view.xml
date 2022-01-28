@@ -16,7 +16,6 @@
                         <group colspan="6">
                             <field name="letras" modifiers="{}" id="letras"/>
                             <field name="codigo" modifiers="{}" id="codigo"/>
-                            <field name="delegacion" widget="Delegacón" required="1"/>
                         </group>
                         <group colspan="6">
                             <field name="direccion" placeholder="Ingrese la dirección..." modifiers="{}" id="direccion"/>
@@ -33,6 +32,7 @@
                                         <create name="add_product_control" string="Agregar Area..."/>
                                     </control>
                                     <field name="name"/>
+                                    <field name="delegacion"/>
                                     <field name="letras"/>
                                     <field name="codigo"/>
                                     <field name="telefono"/>
@@ -58,7 +58,6 @@
                 <field name="codigo"/>
                 <field name="direccion"/>
                 <field name="telefono"/>
-                <field name="delegacion"/>
             </tree>
         </field>
     </record>
@@ -78,16 +77,11 @@
                             <ul>
                                 <li>
                                  <strong class="o_kanban_record_subtitle">
-                                    Organismo: <field name="name"/>
+                                    <field name="name"/>
                                  </strong>   
                                 </li>
                                 <li>
-                                 <strong >
-                                    Delegación: <field name="delegacion"/>
-                                 </strong>   
-                                </li>
-                                <li>
-                                    Iniciales y Código : <field name="letras"/>-<field name="codigo"/>
+                                    Iniciales y Código : <strong><field name="letras"/>-<field name="codigo"/></strong>  
                                 </li>
                                 <li>
                                     Dirección : <field name="direccion"/>

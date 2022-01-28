@@ -9,9 +9,9 @@
            <form string="Cargos" modifiers="{}">
                 <sheet modifiers="{}">
                     <group name="cargo_details" col="4" modifiers="{}">
+                        <field name="organismo" placeholder="Selecciones el Organismo..." modifiers="{}" required="1"/>
+                        <field name="area_id" placeholder="Selecciones el Area..." modifiers="{}" required="1"/>
                         <field name="name" placeholder="Ingrese el nombre del cargo..." required="1"/>
-                        <field name="area_id" modifiers="{}"/>
-                        <field name="organismo" modifiers="{}"/>
                         <field name="active" modifiers="{}"/>
                     </group>
                 </sheet>
@@ -29,7 +29,7 @@
             <tree >
                 <field name="name"/>
                 <field name="area_id"/>
-                <field name="nombre_organismo"/>
+                <field name="organismo" modifiers="{}"/>
             </tree>
         </field>
     </record>
@@ -59,7 +59,7 @@
                                 </li>
                                 <li>
                                  <strong class="o_kanban_record_subtitle">
-                                    Organismo: <field name="nombre_organismo"/>
+                                    Organismo: <field name="organismo" />
                                  </strong>   
                                 </li>
                                 

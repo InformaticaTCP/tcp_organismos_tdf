@@ -9,12 +9,13 @@
         <field name="arch" type="xml">
            <form string="Areas" modifiers="{}">
                 <sheet modifiers="{}">
-                    <group name="area_details" col="4" modifiers="{}">
+                    <group name="area_details" col="5" modifiers="{}">
+                        <field name="organismo_id" required="1" placeholder="Seleccione el Organismo..." />
                         <field name="name" placeholder="Ingrese el nombre del área..." required="1"/>
+                        <field name="delegacion" widget="Delegación" required="1"/>
                         <field name="letras" modifiers="{}" id="letras"/>
                         <field name="codigo" modifiers="{}" id="codigo"/>
                         <field name="telefono" class="o_force_ltr" modifiers="{}" id="telefono"/>
-                        <field name="organismo_id" required="1"/>
                     </group>
                      <separator string="Cargos"/>
                      <notebook>
@@ -43,12 +44,30 @@
         <field name="arch" type="xml">
             <tree >
                 <field name="name"/>
+                <field name="delegacion"/>
                 <field name="letras"/>
                 <field name="codigo"/>
                 <field name="telefono"/>
                 <field name="organismo_id"/>
             </tree>
         </field>
+    </record>
+    <!-- End: Vista Lista -->
+
+    <!-- Inicio: Vista busqueda -->
+    <record id="view_tcp_area_search" model="ir.ui.view">                                
+    <field name="name">Areas</field>                                
+    <field name="model">tcp.area</field>                                
+    <field name="arch" type="xml">                                    
+        <search string="Buscar...">     
+            <field name="delegacion"/>
+            <field name="organismo_id"/>
+            <filter string="Areas Activas" domain="[('active', '=', 'True')]" name="active"></filter>
+            <group expand="0" string="Agrupados por">                                            
+                <filter string="Organismos" name="organismo_id" context="{'group_by': 'organismo_id'}"></filter>                                            
+            </group>                                    
+        </search>                                
+    </field>                            
     </record>
     <!-- End: Vista Lista -->
 
@@ -75,7 +94,7 @@
                                  </strong>   
                                 </li>
                                 <li>
-                                    Iniciales y Código : <field name="letras"/>-<field name="codigo"/>
+                                    Iniciales y Código : <field name="letras"/>- <field name="codigo"/>
                                 </li>
                                 <li>
                                     Teléfono : <field name="telefono"/>
