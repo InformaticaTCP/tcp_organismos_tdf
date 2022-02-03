@@ -3,32 +3,32 @@
 <odoo>
 
     <!-- Create main category for settings / users / access permissions -->
-    <record id="module_parent_category_tcp_ddjj" model="ir.module.category">
-        <field name="name">DDJJ Anual Patrimonial</field>
+    <record id="module_parent_category_tcp_organismo" model="ir.module.category">
+        <field name="name">Organismos de TDF</field>
         <field name="sequence">1</field>
     </record>
 
     <!-- Create secondary category for settings / users / access permissions -->
-    <record id="module_children1_category_tcp_ddjj" model="ir.module.category">
-        <field name="name">DDJJ</field>
+    <record id="module_children1_category_tcp_organismo" model="ir.module.category">
+        <field name="name">Organismos</field>
         <field name="sequence">1</field>
-        <field name="parent_id" ref="module_parent_category_tcp_ddjj" />
+        <field name="parent_id" ref="module_parent_category_tcp_organismo" />
     </record>
 
 
-    <!-- Create group (User) for the DDJJ -->
-    <record id="group_tcp_ddjj_user" model="res.groups">
+    <!-- Create group (User) for the Organismos  -->
+    <record id="group_tcp_organismo_user" model="res.groups">
         <field name="name">Usuario: Solo puede ver</field>
-        <field name="category_id" ref="module_children1_category_tcp_ddjj"/>
+        <field name="category_id" ref="module_children1_category_tcp_organismo"/>
         <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
     </record>
  
 
-    <!-- Create group (Admimns) for the DDJJ-->
-    <record id="group_tcp_ddjj_admin" model="res.groups">
+    <!-- Create group (Admin) for the Organismos -->
+    <record id="group_tcp_organsimo_admin" model="res.groups">
         <field name="name">Administrador: Puede crear y editar</field>
-        <field name="category_id" ref="module_children1_category_tcp_ddjj"/>
-        <field name="implied_ids" eval="[(4, ref('group_tcp_ddjj_user'))]"/>
+        <field name="category_id" ref="module_children1_category_tcp_organismo"/>
+        <field name="implied_ids" eval="[(4, ref('group_tcp_organismo_user'))]"/>
     </record>
 
 </odoo>

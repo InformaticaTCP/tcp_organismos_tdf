@@ -18,6 +18,8 @@
         'base'
         ],
     'data': [
+        'security/security.xml',
+        'security/ir.model.access.csv',
         'views/menu.xml',
         'views/tcp_organismo_view.xml',
         'views/tcp_area_view.xml',

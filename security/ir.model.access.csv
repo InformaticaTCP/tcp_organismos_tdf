@@ -1,7 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_tcp_ddjj_intimacion_user,Access DDJJ Intimación -User,model_tcp_ddjj_intimacion,group_tcp_ddjj_user,1,0,0,0
-access_tcp_ddjj_legal_user,Access DDJJ Legal -User,model_tcp_ddjj_legal,group_tcp_ddjj_user,1,0,0,0
-access_tcp_ddjj_persona_user,Access DDJJ Persona -User,model_tcp_ddjj_persona,group_tcp_ddjj_user,1,0,0,0
-access_tcp_ddjj_intimacion_admin,Access DDJJ Intimación -Admin,model_tcp_ddjj_intimacion,group_tcp_ddjj_admin,1,1,1,0
-access_tcp_ddjj_legal_admin,Access DDJJ Legal -Admin,model_tcp_ddjj_legal,group_tcp_ddjj_admin,1,1,1,0
-access_tcp_ddjj_persona_admin,Access DDJJ Persona -Admin,model_tcp_ddjj_persona,group_tcp_ddjj_admin,1,1,1,0
+access_tcp_area_user,Access TCP  Area -User,model_tcp_area,group_tcp_organismo_user,1,0,0,0
+access_tcp_cargo_user,Access TCP Cargo -User,model_tcp_cargo,group_tcp_organismo_user,1,0,0,0
+access_tcp_organismo_user,Access TCP Organismo -User,model_tcp_organismo,group_tcp_organismo_user,1,0,0,0
+access_tcp_area_admin,Access TCP Area -Admin,model_tcp_area,group_tcp_organsimo_admin,1,1,1,0
+access_tcp_cargo_admin,Access TCP Cargo -Admin,model_tcp_cargo,group_tcp_organsimo_admin,1,1,1,0
+access_tcp_organismo_admin,Access TCP Organismo -Admin,model_tcp_organismo,group_tcp_organsimo_admin,1,1,1,0
