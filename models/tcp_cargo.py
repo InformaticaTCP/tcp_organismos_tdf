@@ -15,23 +15,29 @@ class TcpCargo(models.Model):
     active = fields.Boolean(string='Activo ?', default=True)
     
     # Relaciones entre Areas y cargos 
-    area_id = fields.Many2one(string='Area', comodel_name='tcp.area', ondelete='restrict')
-    organismo = fields.Many2one(string='Organismo', comodel_name='tcp.organismo')
-    
-    
-    @api.onchange('organismo')
-    def _onchange_organismo(self):
-        self.area_id = 0
-        if self.organismo:
-            # filter products by seller
-            product_ids = self.organismo.id
-            return {'domain': {'area_id': [('organismo_id', '=', product_ids)]}}
-        else:
-        # filter all products -> remove domain
-            return {'domain': {'area_id': []}}
+    area_id = fields.Many2one(
+        comodel_name='tcp.area',
+        string='Area',
+        ondelete='restrict')
 
-   # @api.onchange('reparticion_id')
-   # def onchange_reparticion_id(self):
-    #    for rec in self:
-    #        return {'domain':{'area_id':[('organismo_id', '=', 'rec.reparticion_id.id')]}}
+    organismo = fields.Many2one(
+        comodel_name='tcp.organismo',
+        string='Organismo')
+    
+    
+#     @api.onchange('organismo')
+#     def _onchange_organismo(self):
+#         self.area_id = 0
+#         if self.organismo:
+#             # filter products by seller
+#             product_ids = self.organismo.id
+#             return {'domain': {'area_id': [('organismo_id', '=', product_ids)]}}
+#         else:
+#         # filter all products -> remove domain
+#             return {'domain': {'area_id': []}}
+
+#    # @api.onchange('reparticion_id')
+#    # def onchange_reparticion_id(self):
+#     #    for rec in self:
+#     #        return {'domain':{'area_id':[('organismo_id', '=', 'rec.reparticion_id.id')]}}
    
